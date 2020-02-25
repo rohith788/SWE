@@ -23,18 +23,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
-        table.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
-        public void valueChanged(ListSelectionEvent event) {
-            // do some actions here, for example
-            // print first column value from selected row
-            System.out.println(table.getValueAt(table.getSelectedRow(), 0).toString());
-        }
-
-            @Override
-            public void valueChanged(ListSelectionEvent lse) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-    });
+        
     }
 
     /**
@@ -243,7 +232,9 @@ public class Main extends javax.swing.JFrame {
         if(i != 0){
         model.removeRow(i); 
     }  
-        
+        pause.setEnabled(false);
+        unpause.setEnabled(false);
+        delete.setEnabled(false);
            
         
         // TODO add your handling code here:
