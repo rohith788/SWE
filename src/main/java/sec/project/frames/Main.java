@@ -43,7 +43,7 @@ public class Main extends javax.swing.JFrame {
 		unpause.setText(gc.UNPAUSE);
 		unpause.setEnabled(false);
 		delete.setText(gc.DELETE);
-
+                delete.setEnabled(false);
 		book.addActionListener(new AddActionListener(table, name, email, password));
 		delete.addActionListener(new DeleteActionListener(table, pause, unpause, delete));
 		pause.addActionListener(new PauseActionListener(table, pause, unpause));

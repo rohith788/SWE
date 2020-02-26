@@ -29,7 +29,7 @@ public class DeleteActionListener implements ActionListener {
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		int i = table.getSelectedRow();
 		JOptionPane.showInputDialog("Enter Password");
-		if (i != 0) {
+		if (i != -1) {
 			model.removeRow(i);
 		}
 		pause.setEnabled(false);
