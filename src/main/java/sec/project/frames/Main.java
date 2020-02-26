@@ -5,7 +5,7 @@ import sec.project.listeners.DeleteActionListener;
 import sec.project.listeners.PauseActionListener;
 import sec.project.listeners.TableMouseClickListener;
 import sec.project.listeners.UnPauseActionListener;
-
+import sec.project.constants.GlobalConstants;
 public class Main extends javax.swing.JFrame {
 
 	public Main() {
@@ -27,21 +27,22 @@ public class Main extends javax.swing.JFrame {
 		pause = new javax.swing.JButton();
 		unpause = new javax.swing.JButton();
 		delete = new javax.swing.JButton();
+		gc  = new GlobalConstants();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-		jLabel1.setText("Name");
-		jLabel2.setText("Email");
-		jLabel3.setText("Password");
-		password.setText("jPasswordField1");
+		jLabel1.setText(gc.NAME);
+		jLabel2.setText(gc.EMAIL);
+		jLabel3.setText(gc.PASSWORD);
+		password.setText(gc.JPASSWORDFIELD);
 		jScrollPane2.setViewportView(table);
 		
-		book.setText("Book");
-		pause.setText("Pause");
+		book.setText(gc.BOOK);
+		pause.setText(gc.PAUSE);
 		pause.setEnabled(false);
-		unpause.setText("Unpause");
+		unpause.setText(gc.UNPAUSE);
 		unpause.setEnabled(false);
-		delete.setText("Delete");
+		delete.setText(gc.DELETE);
 
 		book.addActionListener(new AddActionListener(table, name, email, password));
 		delete.addActionListener(new DeleteActionListener(table, pause, unpause, delete));
@@ -51,13 +52,14 @@ public class Main extends javax.swing.JFrame {
 
 		table.setModel(new javax.swing.table.DefaultTableModel(new Object[][] { { "Rohit", "Unpaused" },
 				{ "Aswin", "Unpaused" }, { "Rasita", "Unpaused" }, { "Bala", "Unpaused" } },
-				new String[] { "Name", "Status" }) {
+				new String[] { gc.NAME, gc.STATUS }) {
 			Class[] types = new Class[] { java.lang.String.class, java.lang.String.class };
 
 			public Class getColumnClass(int columnIndex) {
 				return types[columnIndex];
 			}
 		});
+		table.setDefaultEditor(Object.class, null);
 		
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
@@ -160,4 +162,6 @@ public class Main extends javax.swing.JFrame {
 	private javax.swing.JButton pause;
 	private javax.swing.JTable table;
 	private javax.swing.JButton unpause;
+	private GlobalConstants gc;
+	
 }
