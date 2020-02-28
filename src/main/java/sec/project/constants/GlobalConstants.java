@@ -10,6 +10,6 @@ public class  GlobalConstants {
 	public static final String UNPAUSE = "Unpause";
 	public static final String DELETE = "Delete";
 	public static final String STATUS = "Status";
-	public static final String HIDE_ON_CLOSE = "1";
+	public static final String PASSWORD_DIALOGUE = "Enter Password to Confirm";
 
 }

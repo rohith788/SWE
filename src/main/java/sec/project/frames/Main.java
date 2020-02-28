@@ -5,6 +5,9 @@ import sec.project.listeners.DeleteActionListener;
 import sec.project.listeners.PauseActionListener;
 import sec.project.listeners.TableMouseClickListener;
 import sec.project.listeners.UnPauseActionListener;
+
+import javax.swing.BorderFactory;
+
 import sec.project.constants.GlobalConstants;
 public class Main extends javax.swing.JFrame {
 
@@ -23,7 +26,7 @@ public class Main extends javax.swing.JFrame {
 		jScrollPane2 = new javax.swing.JScrollPane();
 		table = new javax.swing.JTable();
 		jLabel3 = new javax.swing.JLabel();
-		password = new javax.swing.JPasswordField();
+		password = new javax.swing.JPasswordField("",15);
 		pause = new javax.swing.JButton();
 		unpause = new javax.swing.JButton();
 		delete = new javax.swing.JButton();
@@ -34,7 +37,7 @@ public class Main extends javax.swing.JFrame {
 		jLabel1.setText(gc.NAME);
 		jLabel2.setText(gc.EMAIL);
 		jLabel3.setText(gc.PASSWORD);
-		password.setText(gc.JPASSWORDFIELD);
+		
 		jScrollPane2.setViewportView(table);
 		
 		book.setText(gc.BOOK);
