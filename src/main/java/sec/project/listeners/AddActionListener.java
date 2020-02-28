@@ -9,39 +9,44 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import sec.project.frames.Book;
+
 public class AddActionListener implements ActionListener {
 
 	private JTable table;
 	private JTextField name;
-	
 	private JTextField email;
-        private JPasswordField password;
-	
+	private JPasswordField password;
 
 	public AddActionListener(JTable table, JTextField name, JTextField email, JPasswordField password) {
 		super();
 		this.table = table;
 		this.name = name;
-		this.email = email; this.password = password;
+		this.email = email;
+		this.password = password;
 		
+
 	}
 
 	public void actionPerformed(ActionEvent evt) {
-		bookActionPerformed(evt);
+
+		/* new Book().setVisible(true); */
+		new Book(table).setVisible(true);
+		 bookActionPerformed(evt);
 	}
 
 	private void bookActionPerformed(ActionEvent evt) {
-            
+
 		String n = name.getText();
-                String em = email.getText();
-                String p = password.getText();
-		if(n.isEmpty() || em.isEmpty() | p.isEmpty()){
-                    JOptionPane.showMessageDialog(null, "Enter all the information",n , 0);
-                }
-                else{   
-		Object[] r = { n, "Unpaused" };
-		DefaultTableModel model = (DefaultTableModel) table.getModel();
-		model.addRow(r);
-                        }
+		String em = email.getText();
+		String p = password.getText();
+		if (n.isEmpty() || em.isEmpty() | p.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Enter all the information", n, 0);
+		} else {
+			Object[] r = { n, "Unpaused" };
+			DefaultTableModel model = (DefaultTableModel) table.getModel();
+			model.addRow(r);
+		}
+		//this.dispose();
 	}
 }
