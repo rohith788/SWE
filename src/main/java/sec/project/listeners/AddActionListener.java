@@ -31,7 +31,6 @@ public class AddActionListener implements ActionListener {
 	public void actionPerformed(ActionEvent evt) {
 
 		/* new Book().setVisible(true); */
-		new Book(table).setVisible(true);
 		 bookActionPerformed(evt);
 	}
 

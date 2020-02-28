@@ -22,6 +22,7 @@ public class Book extends javax.swing.JFrame {
 
 	public Book(JTable table) throws HeadlessException {
 		initComponents();
+		setLocationRelativeTo(null);
 		this.table = table;
 	}
 
@@ -30,7 +31,6 @@ public class Book extends javax.swing.JFrame {
 	 */
 	public Book() {
 		initComponents();
-		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 	}
 
 	/**
@@ -50,8 +50,8 @@ public class Book extends javax.swing.JFrame {
 		password = new javax.swing.JPasswordField();
 		book = new javax.swing.JButton();
 		gc = new GlobalConstants();
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
+		//setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		jLabel1.setText(gc.NAME);
 		jLabel2.setText(gc.EMAIL);
 		jLabel3.setText(gc.PASSWORD);
@@ -102,7 +102,6 @@ public class Book extends javax.swing.JFrame {
 						.addGap(18, 18, 18).addComponent(book).addContainerGap(174, Short.MAX_VALUE)));
 
 		pack();
-		setLocationRelativeTo(null);
 	}// </editor-fold>
 
 	private void bookActionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,9 +116,8 @@ public class Book extends javax.swing.JFrame {
 			Object[] r = { n, "Unpaused" };
 			DefaultTableModel model = (DefaultTableModel) table.getModel();
 			model.addRow(r);
+			this.dispose();
 		}
-		this.dispose();
-
 	}
 
 	/**
